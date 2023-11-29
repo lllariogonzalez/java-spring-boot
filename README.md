@@ -1,6 +1,4 @@
-# Spring Boot
-
-## Definición
+# Spring Boot ![SpringBoot icon](./images/springboot-icon.png) 
 
 Spring Boot es un framework de desarrollo de aplicaciones Java que simplifica la creación de aplicaciones robustas y de alto rendimiento. Proporciona un conjunto de herramientas y convenciones que facilitan el desarrollo, eliminando gran parte de la configuración tediosa y permitiendo a los desarrolladores centrarse en la lógica de negocio.
 

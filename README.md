@@ -39,3 +39,32 @@ Spring Boot es un framework de desarrollo de aplicaciones Java que simplifica la
     - Utiliza herramientas como Maven o Gradle para crear un nuevo proyecto Spring Boot.
     - Agrega las dependencias necesarias en el archivo de configuración (pom.xml para Maven, build.gradle para Gradle).
     - Ejecuta la aplicación desde la línea de comandos utilizando los comandos proporcionados por Maven o Gradle.
+
+
+### Anotaciones Principales:
+
+1. `@SpringBootApplication`: Anotación principal para arrancar una aplicación Spring Boot. Combina `@Configuration`, `@EnableAutoConfiguration` y `@ComponentScan`.
+
+2. `@RestController`: Utilizada para marcar clases que gestionan las peticiones HTTP y devuelven respuestas RESTful.
+
+3. `@Autowired`: Se utiliza para la inyección de dependencias, permitiendo a Spring resolver e inyectar automáticamente las dependencias en los beans.
+
+4. `@RequestMapping`: Mapea las peticiones HTTP a métodos específicos del controlador, permitiendo definir el URI y el método HTTP.
+
+5. `@Service`: Utilizada para marcar clases de servicios. Los servicios contienen lógica de negocio y se utilizan para realizar operaciones específicas.
+
+6. `@Repository`: Usada para marcar clases de repositorio. Los repositorios se utilizan para interactuar con la capa de persistencia, como bases de datos.
+
+7. `@Component`: Anotación genérica para marcar una clase como un componente de Spring, permitiendo que Spring la gestione automáticamente.
+
+8. `@Configuration`: Define una clase de configuración de Spring, especialmente útil para la configuración de beans.
+
+9. `@EnableAutoConfiguration`: Habilita la autoconfiguración de Spring Boot, permitiendo que Spring configure automáticamente el contexto de la aplicación.
+
+10. `@PathVariable`: Utilizada para mapear variables de la URL a parámetros del método de controlador.
+
+11. `@RequestBody`: Se utiliza para vincular el cuerpo de la solicitud HTTP a un objeto Java en métodos de controlador.
+
+12. `@ResponseBody`: Indica que el valor devuelto por un método debe ser serializado en la respuesta HTTP.
+
+13. `@GetMapping`, `@PostMapping`, `@PutMapping`, `@DeleteMapping`: Anotaciones de conveniencia para mapear métodos a operaciones HTTP GET, POST, PUT y DELETE respectivamente.

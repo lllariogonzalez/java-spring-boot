@@ -68,3 +68,69 @@ Spring Boot es un framework de desarrollo de aplicaciones Java que simplifica la
 12. `@ResponseBody`: Indica que el valor devuelto por un método debe ser serializado en la respuesta HTTP.
 
 13. `@GetMapping`, `@PostMapping`, `@PutMapping`, `@DeleteMapping`: Anotaciones de conveniencia para mapear métodos a operaciones HTTP GET, POST, PUT y DELETE respectivamente.
+
+## Arquitectura Multicapa en Spring Boot
+
+![Arquitectura multicapa](./images/Arquitectura%20Multicapa.png)
+
+En Spring Boot, una arquitectura multicapa se utiliza comúnmente para construir aplicaciones robustas y escalables. Esta arquitectura sigue el patrón de separación en diferentes capas, como:
+
+### 1. Capa de Presentación (Controladores - Controllers)
+
+- Responsable de manejar las peticiones HTTP.
+- Utiliza anotaciones como `@RestController` y `@RequestMapping`.
+- Ejemplo: `UserController.java`.
+
+### 2. Capa de Servicio (Servicios - Services)
+
+- Contiene la lógica de negocio de la aplicación.
+- Utiliza anotaciones como `@Service`.
+- Ejemplo: `UserService.java`.
+
+### 3. Capa de Repositorio (Persistencia - Repositories)
+
+- Define la interacción con la capa de persistencia de datos.
+- Utiliza anotaciones como `@Repository`.
+- Ejemplo: `UserRepository.java`.
+
+### 4. Capa de Dominio (Modelos - Domain)
+
+- Define los modelos o entidades que representan la estructura de los datos.
+- Pueden estar anotados con `@Entity` (en el contexto de JPA).
+- Ejemplo: `User.java`.
+
+### Estructura de Código Ejemplo:
+
+```plaintext
+src
+├── main
+│   └── java
+│       └── com
+│           └── ejemplo
+│               ├── controllers
+│               │   └── UserController.java
+│               ├── services
+│               │   └── UserService.java
+│               ├── repositories
+│               │   └── UserRepository.java
+│               └── models
+│                   └── User.java
+└── resources
+    ├── application.properties
+    └── ...
+```
+
+- `UserController.java`: Controlador que gestiona las peticiones relacionadas con usuarios.
+- `UserService.java`: Clase de servicio que contiene la lógica de negocio relacionada con los usuarios.
+- `UserRepository.java`: Interfaz que define las operaciones de acceso a datos para los usuarios.
+- `User.java`: Clase que representa el modelo de usuario.
+
+### Ventajas de la Arquitectura Multicapa en Spring Boot:
+
+1. **Separación de Responsabilidades**: Cada capa tiene un propósito claro y funciones específicas, lo que facilita el mantenimiento y la comprensión del código.
+
+2. **Reutilización de Código**: Las capas independientes facilitan la reutilización de lógica de negocio y la posibilidad de cambiar implementaciones sin afectar otras partes del sistema.
+
+3. **Escalabilidad y Mantenibilidad**: La modularidad permite que el sistema sea más escalable y adaptable a medida que crece y se añaden nuevas funcionalidades.
+
+4. **Facilita las Pruebas Unitarias**: Al dividir la lógica en capas, se hace más sencillo realizar pruebas unitarias aisladas para cada componente.
